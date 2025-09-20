@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" role="img" aria-labelledby="title1 desc1">
+  <title id="title1">YourName Monogram</title>
+  <desc id="desc1">A minimal circular monogram logo with initials YN and soft gradient.</desc>
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+    <clipPath id="c1"><circle cx="150" cy="150" r="130"/></clipPath>
+  </defs>
+
+  <!-- circle background -->
+  <circle cx="150" cy="150" r="140" fill="none"/>
+
+  <!-- gradient filled inner disc -->
+  <circle cx="150" cy="150" r="130" fill="url(#g1)" clip-path="url(#c1)"/>
+
+  <!-- monogram letters -->
+  <g font-family="Inter, Arial, sans-serif" font-weight="700" fill="#fff" text-anchor="middle" dominant-baseline="middle">
+    <text x="150" y="132" font-size="88">MK</text>
+    <!-- <text x="150" y="198" font-size="48" opacity="0.95">K</text> -->
+  </g>
+</svg>
