@@ -233,7 +233,7 @@ function App() {
               data-aos-delay={200}
             >
               <img
-                src="Logo.png"
+                src="logoTMS.png"
                 alt="Project 1"
                 className="w-full h-48 object-cover"
               />
