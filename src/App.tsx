@@ -6,6 +6,8 @@ import * as Feather from "react-feather";
 import { Code, Layout, Smartphone } from "react-feather"; // make sure react-feather is installed
 
 function App() {
+  let isOpen = false;
+
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -60,8 +62,18 @@ function App() {
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        className="hidden md:hidden fixed inset-0 bg-white z-20 pt-16"
+        className="hidden md:hidden fixed inset-0 bg-gray-200 z-20 pt-16"
       >
+        <div className="flex justify-end px-5">
+          <button
+            className="text-gray-500 hover:text-gray-900 focus:outline-none"
+            onClick={() =>
+              document.getElementById("mobile-menu")?.classList.toggle("hidden")
+            }
+          >
+            <Feather.X className="h-6 w-6"></Feather.X>
+          </button>
+        </div>
         <div className="px-4 pt-2 pb-3 space-y-1">
           {["Home", "About", "Projects", "Contact"].map((item) => (
             <a
@@ -86,7 +98,7 @@ function App() {
               <p className="text-xl text-indigo-100 mb-8">
                 Web Developer & Designer creating beautiful digital experiences
               </p>
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 md:justify-start justify-center">
                 <a
                   href="#"
                   className="bg-white text-indigo-600 px-6 py-3 rounded-md font-medium hover:bg-indigo-50 transition duration-150"
@@ -103,9 +115,9 @@ function App() {
             </div>
             <div className="md:w-1/2 flex justify-center" data-aos="fade-left">
               <img
-                src="http://static.photos/technology/640x360/1"
+                src="portrait.jpg"
                 alt="Profile"
-                className="rounded-lg shadow-xl w-full max-w-md"
+                className="rounded-lg shadow-xl w-full max-w-md object-cover"
               />
             </div>
           </div>
@@ -192,7 +204,7 @@ function App() {
         </div>
       </section>
 
-      {/* TODO: Add About, Projects, Contact, Footer sections here using same JSX translation */}
+      {/* TODO: Projects, Contact, Footer sections here using same JSX*/}
     </div>
   );
 }
