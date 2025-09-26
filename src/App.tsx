@@ -26,7 +26,7 @@ function App() {
               <div className="flex-shrink-0 flex items-center">
                 <Feather.User className="h-6 w-6 text-indigo-600" />
                 <span className="ml-2 text-xl font-semibold text-gray-900">
-                  MySite
+                  Michalis Kokologiannkis
                 </span>
               </div>
             </div>
@@ -200,6 +200,127 @@ function App() {
                 from desktop to mobile.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2
+              className="text-3xl font-bold text-gray-900 mb-4"
+              data-aos="fade-up"
+            >
+              Featured Projects
+            </h2>
+            <div className="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
+            <p
+              className="text-lg text-gray-600 max-w-3xl mx-auto"
+              data-aos="fade-up"
+              data-aos-delay={100}
+            >
+              Here are some of my recent projects that showcase my skills and
+              expertise.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Project 1 */}
+            <div
+              className="bg-white rounded-lg overflow-hidden shadow-md card-hover transition duration-300"
+              data-aos="fade-up"
+              data-aos-delay={200}
+            >
+              <img
+                src="Logo.png"
+                alt="Project 1"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  Thesis Management System
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  A fully responsive Thesis Management System with user registration and custom built UI
+                </p>
+                <div className="flex space-x-2">
+                  <span className="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">
+                    React
+                  </span>
+                  <span className="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">
+                    Node.js
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 2 */}
+            <div
+              className="bg-white rounded-lg overflow-hidden shadow-md card-hover transition duration-300"
+              data-aos="fade-up"
+              data-aos-delay={300}
+            >
+              <img
+                src="http://static.photos/technology/640x360/2"
+                alt="Project 2"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  Portfolio Template
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  A sleek portfolio template for creative professionals.
+                </p>
+                <div className="flex space-x-2">
+                  <span className="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">
+                    HTML/CSS
+                  </span>
+                  <span className="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">
+                    JavaScript
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 3 */}
+            <div
+              className="bg-white rounded-lg overflow-hidden shadow-md card-hover transition duration-300"
+              data-aos="fade-up"
+              data-aos-delay={400}
+            >
+              <img
+                src="http://static.photos/abstract/640x360/1"
+                alt="Project 3"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  Dashboard UI
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  An admin dashboard with analytics, user management and more.
+                </p>
+                <div className="flex space-x-2">
+                  <span className="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">
+                    Vue.js
+                  </span>
+                  <span className="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">
+                    Tailwind
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12" data-aos="fade-up">
+            <a
+              href="#"
+              className="inline-block bg-gray-400 text-white px-6 py-3 rounded-md font-medium hover:bg-gray-700 transition duration-150"
+            >
+              View All Comming Soon...
+            </a>
           </div>
         </div>
       </section>
