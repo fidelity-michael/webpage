@@ -6,7 +6,6 @@ import * as Feather from "react-feather";
 import { Code, Layout, Smartphone } from "react-feather"; // make sure react-feather is installed
 
 function App() {
-  let isOpen = false;
 
   useEffect(() => {
     AOS.init({
@@ -35,6 +34,7 @@ function App() {
                 <a
                   key={item}
                   href={"#" + item}
+                  onClick={() => document.getElementById("mobile-menu")?.classList.toggle("hidden") }
                   className="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition duration-150"
                 >
                   {item}
@@ -78,7 +78,8 @@ function App() {
           {["Home", "About", "Projects", "Contact"].map((item) => (
             <a
               key={item}
-              href="#"
+              href={"#" + item}
+              onClick={() => document.getElementById("mobile-menu")?.classList.toggle("hidden") }
               className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50"
             >
               {item}
