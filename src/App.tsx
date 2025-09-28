@@ -118,7 +118,7 @@ function App() {
               <img
                 src="portrait.jpg"
                 alt="Profile"
-                className="rounded-lg shadow-xl w-full max-w-md object-cover"
+                className="rounded-lg shadow-xl h-80 w-full max-w-md object-cover overflow-hidden"
               />
             </div>
           </div>
