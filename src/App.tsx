@@ -6,7 +6,6 @@ import * as Feather from "react-feather";
 import { Code, Layout, Smartphone } from "react-feather"; // make sure react-feather is installed
 
 function App() {
-
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -34,7 +33,11 @@ function App() {
                 <a
                   key={item}
                   href={"#" + item}
-                  onClick={() => document.getElementById("mobile-menu")?.classList.toggle("hidden") }
+                  onClick={() =>
+                    document
+                      .getElementById("mobile-menu")
+                      ?.classList.toggle("hidden")
+                  }
                   className="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition duration-150"
                 >
                   {item}
@@ -79,7 +82,11 @@ function App() {
             <a
               key={item}
               href={"#" + item}
-              onClick={() => document.getElementById("mobile-menu")?.classList.toggle("hidden") }
+              onClick={() =>
+                document
+                  .getElementById("mobile-menu")
+                  ?.classList.toggle("hidden")
+              }
               className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50"
             >
               {item}
@@ -236,14 +243,15 @@ function App() {
               <img
                 src="logoTMS.png"
                 alt="Project 1"
-                className="w-full h-48 object-cover"
+                className="w-full h-56 object-cover"
               />
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   Thesis Management System
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  A fully responsive System with user registration and custom built UI
+                  A fully responsive System with user registration and custom
+                  built UI.
                 </p>
                 <div className="flex space-x-2">
                   <span className="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">
@@ -263,23 +271,24 @@ function App() {
               data-aos-delay={300}
             >
               <img
-                src="http://static.photos/technology/640x360/2"
+                src="information-retrieval.webp"
                 alt="Project 2"
-                className="w-full h-48 object-cover"
+                className="w-full h-56 object-cover"
               />
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  Portfolio Template
+                  Information Retrieval System
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  A sleek portfolio template for creative professionals.
+                  A system using indexing and ranking for
+                  efficient, relevant search.
                 </p>
                 <div className="flex space-x-2">
                   <span className="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">
-                    HTML/CSS
+                    Java
                   </span>
                   <span className="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">
-                    JavaScript
+                    Maven
                   </span>
                 </div>
               </div>
@@ -292,23 +301,20 @@ function App() {
               data-aos-delay={400}
             >
               <img
-                src="http://static.photos/abstract/640x360/1"
+                src="pokemon.jpg"
                 alt="Project 3"
-                className="w-full h-48 object-cover"
+                className="w-full h-56 object-cover object-center"
               />
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  Dashboard UI
+                  Pokemon Game
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  An admin dashboard with analytics, user management and more.
+                  A simple text based console game, emulating pokemon fights.
                 </p>
                 <div className="flex space-x-2">
                   <span className="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">
-                    Vue.js
-                  </span>
-                  <span className="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">
-                    Tailwind
+                    C++
                   </span>
                 </div>
               </div>
