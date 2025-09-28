@@ -13,5 +13,9 @@ html, body, #root {
             transform: scale(1.1);
         }
 
+html {
+    scroll-behavior: smooth;
+}
+
 @import "tailwindcss"
 

@@ -34,7 +34,7 @@ function App() {
               {["Home", "About", "Projects", "Contact"].map((item) => (
                 <a
                   key={item}
-                  href="#"
+                  href={"#" + item}
                   className="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition duration-150"
                 >
                   {item}
@@ -88,7 +88,7 @@ function App() {
       </div>
 
       {/* Hero Section */}
-      <header className="hero-gradient pt-24 pb-20">
+      <header id="Home" className="hero-gradient pt-24 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="md:flex items-center justify-between">
             <div className="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
@@ -125,7 +125,7 @@ function App() {
       </header>
 
       {/* About Section */}
-      <section className="py-20 bg-white">
+      <section id="About" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-7">
           <div className="text-center mb-16">
             <h2
@@ -205,7 +205,7 @@ function App() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 bg-gray-50">
+      <section id="Projects" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2
@@ -242,7 +242,7 @@ function App() {
                   Thesis Management System
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  A fully responsive Thesis Management System with user registration and custom built UI
+                  A fully responsive System with user registration and custom built UI
                 </p>
                 <div className="flex space-x-2">
                   <span className="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">
