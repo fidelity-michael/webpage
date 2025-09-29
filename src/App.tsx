@@ -22,9 +22,9 @@ function App() {
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center">
-                <Feather.User className="h-6 w-6 text-indigo-600" />
-                <span className="ml-2 text-xl font-semibold text-gray-900">
-                  Michalis Kokologiannkis
+                <Feather.User className="h-7 w-7 text-indigo-600" />
+                <span className="font-suse tracking-tight font-bold ml-2 text-xl text-gray-900">
+                  Michalis Kokologiannakis
                 </span>
               </div>
             </div>
@@ -101,7 +101,7 @@ function App() {
           <div className="md:flex items-center justify-between">
             <div className="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                Hello, I&apos;m <span className="text-indigo-200">Michael</span>
+                Hello, I&apos;m <span className="font-suse tracking-tight text-indigo-200">Michael</span>
               </h1>
               <p className="text-xl text-indigo-100 mb-8">
                 Web Developer & Designer creating beautiful digital experiences
