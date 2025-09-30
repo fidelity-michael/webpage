@@ -3,7 +3,15 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import * as Feather from "react-feather";
 
-import { Code, Layout, Smartphone } from "react-feather"; // make sure react-feather is installed
+import {
+  Code,
+  Layout,
+  Smartphone,
+  GitHub,
+  Twitter,
+  Linkedin,
+  Instagram,
+} from "react-feather"; // make sure react-feather is installed
 
 function App() {
   useEffect(() => {
@@ -101,20 +109,23 @@ function App() {
           <div className="md:flex items-center justify-between">
             <div className="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                Hello, I&apos;m <span className="font-suse tracking-tight text-indigo-200">Michael</span>
+                Hello, I&apos;m{" "}
+                <span className="font-suse tracking-tight text-indigo-200">
+                  Michael
+                </span>
               </h1>
               <p className="text-xl text-indigo-100 mb-8">
                 Web Developer & Designer creating beautiful digital experiences
               </p>
               <div className="flex space-x-4 md:justify-start justify-center">
                 <a
-                  href="#"
+                  href="#Projects"
                   className="bg-white text-indigo-600 px-6 py-3 rounded-md font-medium hover:bg-indigo-50 transition duration-150"
                 >
                   View My Work
                 </a>
                 <a
-                  href="#"
+                  href="#Contact"
                   className="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-indigo-600 transition duration-150"
                 >
                   Contact Me
@@ -434,6 +445,98 @@ function App() {
           </div>
         </div>
       </section>
+
+      <footer className="bg-gray-900 text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Footer Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* About */}
+            <div>
+              <h3 className="text-xl font-semibold mb-4">About</h3>
+              <p className="text-gray-400">
+                I'm a web developer passionate about creating beautiful,
+                functional websites that make an impact.
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition duration-150"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#About"
+                    className="text-gray-400 hover:text-white transition duration-150"
+                  >
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#Projects"
+                    className="text-gray-400 hover:text-white transition duration-150"
+                  >
+                    Projects
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#Contact"
+                    className="text-gray-400 hover:text-white transition duration-150"
+                  >
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Connect */}
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Connect</h3>
+              <div className="flex space-x-4">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white transition duration-150 social-icon"
+                >
+                  <GitHub className="h-6 w-6" />
+                </a>
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white transition duration-150 social-icon"
+                >
+                  <Twitter className="h-6 w-6" />
+                </a>
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white transition duration-150 social-icon"
+                >
+                  <Linkedin className="h-6 w-6" />
+                </a>
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white transition duration-150 social-icon"
+                >
+                  <Instagram className="h-6 w-6" />
+                </a>
+              </div>
+              <p className="mt-4 text-gray-400">mixkok2001@gmail.com</p>
+            </div>
+          </div>
+
+          {/* Footer Bottom */}
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <p>&copy; 2025 My Personal Site. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
 
       {/* TODO: Projects, Contact, Footer sections here using same JSX*/}
     </div>
