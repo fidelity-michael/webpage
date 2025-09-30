@@ -332,120 +332,21 @@ function App() {
               </div>
             </div>
           </div>
-          {/*
+
           <div className="text-center mt-12" data-aos="fade-up">
             <a
-              href="#"
-              className="inline-block bg-gray-400 text-white px-6 py-3 rounded-md font-medium hover:bg-gray-700 transition duration-150"
+              href="https://github.com/fidelity-michael"
+              target="_blank"
+              className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-md font-medium hover:bg-gray-700 transition duration-150"
             >
-              View All Comming Soon...
+              View All Projects
             </a>
           </div>
-          */}
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2
-              className="text-3xl font-bold text-gray-900 mb-4"
-              data-aos="fade-up"
-            >
-              Get In Touch
-            </h2>
-            <div className="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
-            <p
-              className="text-lg text-gray-600 max-w-3xl mx-auto"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              Have a project in mind or want to collaborate? I'd love to hear
-              from you!
-            </p>
-          </div>
-
-          {/* Contact Form */}
-          <div className="max-w-3xl mx-auto">
-            <form className="space-y-6" data-aos="fade-up" data-aos-delay="200">
-              {/* Name & Email */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-                  />
-                </div>
-              </div>
-
-              {/* Subject */}
-              <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-                />
-              </div>
-
-              {/* Message */}
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-                ></textarea>
-              </div>
-
-              {/* Submit Button */}
-              <div>
-                <button
-                  type="submit"
-                  className="w-full bg-indigo-600 text-white px-6 py-3 rounded-md font-medium hover:bg-indigo-700 transition duration-150"
-                >
-                  Send Message
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
+      {/* Contact section */}
+      <Contact />
 
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -541,8 +442,6 @@ function App() {
           </div>
         </div>
       </footer>
-
-      {/* TODO: Projects, Contact, Footer sections here using same JSX*/}
     </div>
   );
 }
