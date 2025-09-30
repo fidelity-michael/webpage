@@ -143,6 +143,7 @@ const Contact: React.FC = () => {
               </button>
             </div>
 
+            {/* TODO: Remove text after X seconds */}
             {/* Success / Error Message */}
             {success && (
               <p className="text-center mt-4 text-sm text-gray-700">

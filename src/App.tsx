@@ -11,6 +11,8 @@ import {
   Twitter,
   Linkedin,
   Instagram,
+  Phone,
+  Mail,
 } from "react-feather"; // make sure react-feather is installed
 import Contact from "./Contact";
 
@@ -432,7 +434,15 @@ function App() {
                   <Instagram className="h-6 w-6" />
                 </a>
               </div>
-              <p className="mt-4 text-gray-400">mixkok2001@gmail.com</p>
+
+              <div className="flex mt-4 items-center space-x-3">
+                <Phone className="h-4 w-4" />
+                <p className="text-gray-400">+30 6940586609</p>
+              </div>
+              <div className="flex mt-4 items-center space-x-3">
+                <Mail className="h-4 w-4" />
+                <p className="text-gray-400">mixkok2001@gmail.com</p>
+              </div>
             </div>
           </div>
 
