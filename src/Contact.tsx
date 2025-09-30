@@ -15,10 +15,10 @@ const Contact: React.FC = () => {
 
     emailjs
       .sendForm(
-        "service_rzmun32", // 🔑 Replace with EmailJS Service ID
-        "template_bhdjlxc", // 🔑 Replace with EmailJS Template ID
+        "service_rzmun32", // EmailJS Service ID
+        "template_bhdjlxc", // EmailJS Template ID
         form.current,
-        "bNvx51XuOB2AJMZtq", // 🔑 Replace with your Public Key
+        "bNvx51XuOB2AJMZtq", // Public Key
       )
       .then(
         () => {
