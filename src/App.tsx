@@ -12,6 +12,7 @@ import {
   Linkedin,
   Instagram,
 } from "react-feather"; // make sure react-feather is installed
+import Contact from "./Contact";
 
 function App() {
   useEffect(() => {
@@ -340,7 +341,7 @@ function App() {
               View All Comming Soon...
             </a>
           </div>
-*/}
+          */}
         </div>
       </section>
 
@@ -503,7 +504,8 @@ function App() {
               <h3 className="text-xl font-semibold mb-4">Connect</h3>
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                  href="https://github.com/fidelity-michael"
+                  target="_blank"
                   className="text-gray-400 hover:text-white transition duration-150 social-icon"
                 >
                   <GitHub className="h-6 w-6" />
@@ -515,13 +517,15 @@ function App() {
                   <Twitter className="h-6 w-6" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/michalis-kokologiannakis-1aa935335/"
+                  target="_blank"
                   className="text-gray-400 hover:text-white transition duration-150 social-icon"
                 >
                   <Linkedin className="h-6 w-6" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/michaliskok/"
+                  target="_blank"
                   className="text-gray-400 hover:text-white transition duration-150 social-icon"
                 >
                   <Instagram className="h-6 w-6" />
