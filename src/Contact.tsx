@@ -137,7 +137,7 @@ const Contact: React.FC = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-indigo-600 text-white px-6 py-3 rounded-md font-medium hover:bg-indigo-700 transition duration-150 disabled:opacity-50"
+                className="w-full bg-indigo-600 text-white px-6 py-3 rounded-md font-medium hover:cursor-pointer hover:bg-indigo-700 transition duration-150 disabled:opacity-50"
               >
                 {loading ? "Sending..." : "Send Message"}
               </button>
