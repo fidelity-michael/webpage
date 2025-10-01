@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
+/* TODO: Add limit to emails sent */
 const Contact: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
   const [loading, setLoading] = useState(false);
