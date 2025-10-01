@@ -17,6 +17,7 @@ import {
 import Contact from "./Contact";
 
 function App() {
+  let baseURL = import.meta.env.BASE_URL;
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -137,7 +138,7 @@ function App() {
             </div>
             <div className="md:w-1/2 flex justify-center" data-aos="fade-left">
               <img
-                src="webpage/portrait.jpg"
+                src={baseURL + "/portrait.jpg"}
                 alt="Profile"
                 className="rounded-lg shadow-xl h-80 w-full max-w-md object-cover overflow-hidden"
               />
@@ -255,7 +256,7 @@ function App() {
               data-aos-delay={200}
             >
               <img
-                src="webpage/logoTMS.png"
+                src={baseURL + "/logoTMS.png"}
                 alt="Project 1"
                 className="w-full h-56 object-cover"
               />
@@ -285,7 +286,7 @@ function App() {
               data-aos-delay={300}
             >
               <img
-                src="webpage/information-retrieval.webp"
+                src={baseURL + "/information-retrieval.webp"}
                 alt="Project 2"
                 className="w-full h-56 object-cover"
               />
@@ -315,7 +316,7 @@ function App() {
               data-aos-delay={400}
             >
               <img
-                src="webpage/pokemon.jpg"
+                src={baseURL + "/pokemon.jpg"}
                 alt="Project 3"
                 className="w-full h-56 object-cover object-center"
               />
