@@ -137,7 +137,7 @@ function App() {
             </div>
             <div className="md:w-1/2 flex justify-center" data-aos="fade-left">
               <img
-                src="portrait.jpg"
+                src="webpage/portrait.jpg"
                 alt="Profile"
                 className="rounded-lg shadow-xl h-80 w-full max-w-md object-cover overflow-hidden"
               />
@@ -255,7 +255,7 @@ function App() {
               data-aos-delay={200}
             >
               <img
-                src="logoTMS.png"
+                src="webpage/logoTMS.png"
                 alt="Project 1"
                 className="w-full h-56 object-cover"
               />
@@ -285,7 +285,7 @@ function App() {
               data-aos-delay={300}
             >
               <img
-                src="information-retrieval.webp"
+                src="webpage/information-retrieval.webp"
                 alt="Project 2"
                 className="w-full h-56 object-cover"
               />
@@ -315,7 +315,7 @@ function App() {
               data-aos-delay={400}
             >
               <img
-                src="pokemon.jpg"
+                src="webpage/pokemon.jpg"
                 alt="Project 3"
                 className="w-full h-56 object-cover object-center"
               />
