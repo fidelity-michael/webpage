@@ -435,9 +435,12 @@ function App() {
                 </a>
               </div>
 
-              <div className="flex mt-4 items-center space-x-3">
-                <Phone className="h-4 w-4" />
-                <p className="text-gray-400">+30 6940586609</p>
+              <div className="flex mt-4 items-center space-x-1">
+                <div className="flex items-center space-x-3">
+                  <Phone className="h-4 w-4" />
+                  <p className="text-gray-400">+30</p>
+                </div>
+                <p className="text-gray-400">6940586609</p>
               </div>
               <div className="flex mt-4 items-center space-x-3">
                 <Mail className="h-4 w-4" />
