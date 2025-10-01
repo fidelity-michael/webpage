@@ -339,9 +339,10 @@ function App() {
             <a
               href="https://github.com/fidelity-michael"
               target="_blank"
-              className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-md font-medium hover:bg-gray-700 transition duration-150"
+              className="inline-block bg-indigo-600 hover:bg-gray-700 text-white px-6 py-3 rounded-md font-medium transition duration-150"
             >
               View All Projects
+              <GitHub className="inline-block ml-2" />
             </a>
           </div>
         </div>
