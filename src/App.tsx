@@ -9,7 +9,6 @@ import {
   Layout,
   Smartphone,
   GitHub,
-  Twitter,
   Linkedin,
   Instagram,
   Phone,
