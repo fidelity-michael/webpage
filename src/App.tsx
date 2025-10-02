@@ -114,7 +114,7 @@ function App() {
             <div className="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
                 Hello, I&apos;m{" "}
-                <span className="bg-clip-text bg-linear-to-r from-indigo-200 to-indigo-400 font-suse tracking-tight text-transparent">
+                <span className="font-suse tracking-tight text-indigo-200">
                   Michael
                 </span>
               </h1>
