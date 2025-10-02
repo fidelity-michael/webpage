@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import * as Feather from "react-feather";
+import { AiOutlineDiscord } from "react-icons/ai";
 
 import {
   Code,
@@ -416,10 +417,11 @@ function App() {
                   <GitHub className="h-6 w-6" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/michaliskok/"
+                  target="_blank"
                   className="text-gray-400 hover:text-white transition duration-150 social-icon"
                 >
-                  <Twitter className="h-6 w-6" />
+                  <Instagram className="h-6 w-6" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/michalis-kokologiannakis-1aa935335/"
@@ -429,11 +431,11 @@ function App() {
                   <Linkedin className="h-6 w-6" />
                 </a>
                 <a
-                  href="https://www.instagram.com/michaliskok/"
+                  href="https://discord.com/users/364332134598443008"
                   target="_blank"
                   className="text-gray-400 hover:text-white transition duration-150 social-icon"
                 >
-                  <Instagram className="h-6 w-6" />
+                  <AiOutlineDiscord className="h-6 w-6" />
                 </a>
               </div>
 
