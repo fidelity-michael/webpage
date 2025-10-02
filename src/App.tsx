@@ -34,12 +34,12 @@ function App() {
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               {/* TODO: Make it go to HOME when clicking */}
-              <div className="flex-shrink-0 flex items-center">
+              <a href="#Home" className="flex-shrink-0 flex items-center">
                 <Feather.User className="h-7 w-7 text-indigo-600" />
-                <span className="font-suse tracking-tight font-bold ml-2 text-xl text-gray-900">
+                <span className="font-suse tracking-tight font-bold ml-2 text-lg md:text-xl text-gray-900">
                   Michalis Kokologiannakis
                 </span>
-              </div>
+              </a>
             </div>
             <div className="hidden md:flex items-center space-x-8">
               {["Home", "About", "Projects", "Contact"].map((item) => (
