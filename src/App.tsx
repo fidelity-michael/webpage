@@ -33,7 +33,6 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              {/* TODO: Make it go to HOME when clicking */}
               <a href="#Home" className="flex-shrink-0 flex items-center">
                 <Feather.User className="h-7 w-7 text-indigo-600" />
                 <span className="font-suse tracking-tight font-bold ml-2 text-lg md:text-xl text-gray-900">
