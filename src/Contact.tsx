@@ -144,12 +144,18 @@ const Contact: React.FC = () => {
               </button>
             </div>
 
-            {/* TODO: Remove text after X seconds */}
             {/* Success / Error Message */}
             {success && (
-              <p className="text-center mt-4 text-sm text-gray-700">
-                {success}
-              </p>
+              <div className="relative mt-4 bg-green-100 text-center text-green-800 text-sm rounded-md px-4 py-4">
+                <p>{success}</p>
+                <button
+                  type="button"
+                  onClick={() => setSuccess(null)}
+                  className="absolute top-2 right-3 text-green-600 hover:text-green-900 hover:cursor-pointer"
+                >
+                  ✕
+                </button>
+              </div>
             )}
           </form>
         </div>
