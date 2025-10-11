@@ -1,0 +1,20 @@
+{
+  "home": "Home",
+  "about": "About",
+  "projects": "Projects",
+  "contact": "Contact",
+  "hello": "Hello, I'm",
+  "viewWork": "View My Work",
+  "contactMe": "Contact Me",
+  "aboutMeTitle": "About Me",
+  "aboutMeDesc": "I'm a passionate developer with expertise in modern web technologies. I love creating intuitive user experiences and solving complex problems with elegant solutions.",
+  "featuredProjects": "Featured Projects",
+  "featuredDesc": "Here are some of my recent projects that showcase my skills and expertise.",
+  "viewAll": "View All Projects",
+  "webDevTitle": "Web Development",
+  "webDevDesc": "Building responsive, performant websites using HTML, CSS, JavaScript and modern frameworks.",
+  "uiuxTitle": "UI/UX Design",
+  "uiuxDesc": "Creating beautiful, intuitive interfaces that enhance user experience and drive engagement.",
+  "mobileTitle": "Mobile Responsive",
+  "mobileDesc": "Ensuring your website looks and works perfectly on all devices from desktop to mobile."
+}

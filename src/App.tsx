@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import * as Feather from "react-feather";
@@ -15,9 +15,41 @@ import {
   Mail,
 } from "react-feather"; // make sure react-feather is installed
 import Contact from "./Contact";
+import Card from "./Card";
+import en from "./assets/translations/en.json";
+import gr from "./assets/translations/gr.json";
+
+type Lang = "en" | "gr";
+type TranslationKeys = keyof typeof en;
+type Translations = Record<Lang, Record<TranslationKeys, string>>;
+
+const translations: Translations = { en, gr };
 
 function App() {
   let baseURL = import.meta.env.BASE_URL;
+  const [lang, setLang] = useState("en");
+  const t = translations[lang];
+
+  // Detect ?lang= from URL or fallback to localStorage
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const queryLang = urlParams.get("lang");
+    if (queryLang === "gr" || queryLang === "en") {
+      setLang(queryLang);
+    } else {
+      const saved = localStorage.getItem("lang");
+      if (saved === "gr" || saved === "en") setLang(saved);
+    }
+  }, []);
+
+  // Save lang to localStorage & update URL
+  useEffect(() => {
+    localStorage.setItem("lang", lang);
+    const url = new URL(window.location.href);
+    url.searchParams.set("lang", lang);
+    window.history.replaceState({}, "", url);
+  }, [lang]);
+
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -31,7 +63,8 @@ function App() {
       {/* Navigation */}
       <nav className="bg-white shadow-sm fixed w-full z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
+          <div className="flex justify-between h-16 items-center">
+            {/* Left - Logo */}
             <div className="flex items-center">
               <a href="#Home" className="flex-shrink-0 flex items-center">
                 <Feather.User className="h-7 w-7 text-indigo-600" />
@@ -40,36 +73,52 @@ function App() {
                 </span>
               </a>
             </div>
-            <div className="hidden md:flex items-center space-x-8">
-              {["Home", "About", "Projects", "Contact"].map((item) => (
-                <a
-                  key={item}
-                  href={"#" + item}
-                  onClick={() =>
-                    document
-                      .getElementById("mobile-menu")
-                      ?.classList.toggle("hidden")
-                  }
-                  className="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition duration-150"
+
+            <div className="hidden lg:flex space-x-3 md:space-x-7">
+              {/* Center - Menu */}
+              <div className="hidden lg:flex items-center space-x-8">
+                {[t.home, t.about, t.projects, t.contact].map((item, i) => (
+                  <a
+                    key={i}
+                    href={`#${["Home", "About", "Projects", "Contact"][i]}`}
+                    className="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition duration-150"
+                  >
+                    {item}
+                  </a>
+                ))}
+              </div>
+
+              {/* Right - Language Switch + Mobile Menu */}
+              <div className="hidden lg:flex items-center space-x-2">
+                <button
+                  onClick={() => {
+                    setLang("gr");
+                  }}
+                  className="text-gray-900 hover:cursor-pointer hover:text-indigo-600 py-2 text-sm font-medium transition duration-150"
                 >
-                  {item}
-                </a>
-              ))}
+                  🇬🇷 ΕΛ
+                </button>
+                <span className="h-5 border-1 border-r border-indigo-300"></span>
+                <button
+                  onClick={() => setLang("en")}
+                  className="text-gray-900 hover:cursor-pointer hover:text-indigo-600 py-2 text-sm font-medium transition duration-150"
+                >
+                  EN 🇬🇧
+                </button>
+              </div>
             </div>
-            <div className="md:hidden flex items-center">
-              {/* Mobile Menu Button */}
-              <button
-                id="menu-btn"
-                className="text-gray-500 hover:text-gray-900 focus:outline-none"
-                onClick={() =>
-                  document
-                    .getElementById("mobile-menu")
-                    ?.classList.toggle("hidden")
-                }
-              >
-                <Feather.Menu className="h-6 w-6" />
-              </button>
-            </div>
+
+            <button
+              id="menu-btn"
+              className="lg:hidden text-gray-500 hover:text-gray-900 focus:outline-none"
+              onClick={() =>
+                document
+                  .getElementById("mobile-menu")
+                  ?.classList.toggle("hidden")
+              }
+            >
+              <Feather.Menu className="h-6 w-6" />
+            </button>
           </div>
         </div>
       </nav>
@@ -86,14 +135,14 @@ function App() {
               document.getElementById("mobile-menu")?.classList.toggle("hidden")
             }
           >
-            <Feather.X className="h-6 w-6"></Feather.X>
+            <Feather.X className="h-6 w-6" />
           </button>
         </div>
         <div className="px-4 pt-2 pb-3 space-y-1">
-          {["Home", "About", "Projects", "Contact"].map((item) => (
+          {[t.home, t.about, t.projects, t.contact].map((item, i) => (
             <a
-              key={item}
-              href={"#" + item}
+              key={i}
+              href={`#${["Home", "About", "Projects", "Contact"][i]}`}
               onClick={() =>
                 document
                   .getElementById("mobile-menu")
@@ -113,7 +162,7 @@ function App() {
           <div className="md:flex items-center justify-between">
             <div className="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                Hello, I&apos;m{" "}
+                {t.hello}{" "}
                 <span className="font-suse tracking-tight text-indigo-200">
                   Michael
                 </span>
@@ -126,13 +175,13 @@ function App() {
                   href="#Projects"
                   className="bg-white text-indigo-600 px-6 py-3 rounded-md font-medium hover:bg-indigo-50 transition duration-150"
                 >
-                  View My Work
+                  {t.viewWork}
                 </a>
                 <a
                   href="#Contact"
                   className="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-indigo-600 transition duration-150"
                 >
-                  Contact Me
+                  {t.contactMe}
                 </a>
               </div>
             </div>
@@ -151,78 +200,24 @@ function App() {
       <section id="About" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-7">
           <div className="text-center mb-16">
-            <h2
-              className="text-3xl font-bold text-gray-900 mb-4"
-              data-aos="fade-up"
-            >
-              About Me
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              {t.aboutMeTitle}
             </h2>
             <div className="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
-            <p
-              className="text-lg text-gray-600 max-w-3xl mx-auto"
-              data-aos="fade-up"
-              data-aos-delay={100}
-            >
-              I'm a passionate developer with expertise in modern web
-              technologies. I love creating intuitive user experiences and
-              solving complex problems with elegant solutions.
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              {t.aboutMeDesc}
             </p>
           </div>
 
+          {/* Cards */}
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Web Development Card */}
-            <div
-              className="bg-gray-50 p-8 rounded-lg shadow-sm card-hover transition duration-300"
-              data-aos="fade-up"
-              data-aos-delay={200}
-            >
-              <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <Code className="h-8 w-8 text-indigo-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-center mb-4 text-gray-900">
-                Web Development
-              </h3>
-              <p className="text-gray-600 text-center">
-                Building responsive, performant websites using HTML, CSS,
-                JavaScript and modern frameworks.
-              </p>
-            </div>
-
-            {/* UI/UX Design Card */}
-            <div
-              className="bg-gray-50 p-8 rounded-lg shadow-sm card-hover transition duration-300"
-              data-aos="fade-up"
-              data-aos-delay={300}
-            >
-              <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <Layout className="h-8 w-8 text-indigo-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-center mb-4 text-gray-900">
-                UI/UX Design
-              </h3>
-              <p className="text-gray-600 text-center">
-                Creating beautiful, intuitive interfaces that enhance user
-                experience and drive engagement.
-              </p>
-            </div>
-
-            {/* Mobile Responsive Card */}
-            <div
-              className="bg-gray-50 p-8 rounded-lg shadow-sm card-hover transition duration-300"
-              data-aos="fade-up"
-              data-aos-delay={400}
-            >
-              <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <Smartphone className="h-8 w-8 text-indigo-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-center mb-4 text-gray-900">
-                Mobile Responsive
-              </h3>
-              <p className="text-gray-600 text-center">
-                Ensuring your website looks and works perfectly on all devices
-                from desktop to mobile.
-              </p>
-            </div>
+            <Card icon={<Code />} title={t.webDevTitle} desc={t.webDevDesc} />
+            <Card icon={<Layout />} title={t.uiuxTitle} desc={t.uiuxDesc} />
+            <Card
+              icon={<Smartphone />}
+              title={t.mobileTitle}
+              desc={t.mobileDesc}
+            />
           </div>
         </div>
       </section>
@@ -231,22 +226,16 @@ function App() {
       <section id="Projects" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2
-              className="text-3xl font-bold text-gray-900 mb-4"
-              data-aos="fade-up"
-            >
-              Featured Projects
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              {t.featuredProjects}
             </h2>
             <div className="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
-            <p
-              className="text-lg text-gray-600 max-w-3xl mx-auto"
-              data-aos="fade-up"
-              data-aos-delay={100}
-            >
-              Here are some of my recent projects that showcase my skills and
-              expertise.
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              {t.featuredDesc}
             </p>
           </div>
+
+          {/* Project Cards here... */}
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Project 1 */}
@@ -336,20 +325,19 @@ function App() {
             </div>
           </div>
 
-          <div className="text-center mt-12" data-aos="fade-up">
+          <div className="text-center mt-12">
             <a
               href="https://github.com/fidelity-michael"
               target="_blank"
               className="inline-block bg-indigo-600 hover:bg-gray-700 text-white px-6 py-3 rounded-md font-medium transition duration-150"
             >
-              View All Projects
+              {t.viewAll}
               <GitHub className="inline-block ml-2" />
             </a>
           </div>
         </div>
       </section>
 
-      {/* Contact section */}
       <Contact />
 
       <footer className="bg-gray-900 text-white py-12">
