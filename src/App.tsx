@@ -25,6 +25,7 @@ type Translations = Record<Lang, Record<TranslationKeys, string>>;
 
 const translations: Translations = { en, gr };
 
+/* TODO: Add button that downloads my cv */
 function App() {
   let baseURL = import.meta.env.BASE_URL;
   const [lang, setLang] = useState("en");
@@ -32,6 +33,12 @@ function App() {
 
   // Detect ?lang= from URL or fallback to localStorage
   useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: "ease-in-out",
+      once: true,
+    });
+
     const urlParams = new URLSearchParams(window.location.search);
     const queryLang = urlParams.get("lang");
     if (queryLang === "gr" || queryLang === "en") {
@@ -49,14 +56,6 @@ function App() {
     url.searchParams.set("lang", lang);
     window.history.replaceState({}, "", url);
   }, [lang]);
-
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      easing: "ease-in-out",
-      once: true,
-    });
-  }, []);
 
   return (
     <div className="bg-gray-50 font-sans antialiased">
@@ -200,11 +199,17 @@ function App() {
       <section id="About" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-7">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2
+              className="text-3xl font-bold text-gray-900 mb-4"
+              data-aos="fade-up"
+            >
               {t.aboutMeTitle}
             </h2>
             <div className="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p
+              className="text-lg text-gray-600 max-w-3xl mx-auto"
+              data-aos="fade-up"
+            >
               {t.aboutMeDesc}
             </p>
           </div>
