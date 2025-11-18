@@ -125,8 +125,9 @@ function App() {
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        className="hidden md:hidden fixed inset-0 bg-gray-200 z-20 pt-16"
+        className="hidden md:hidden fixed inset-0 bg-gray-200 z-20 pt-16 flex flex-col "
       >
+        {/* Close button */}
         <div className="flex justify-end px-5">
           <button
             className="text-gray-500 hover:text-gray-900 focus:outline-none"
@@ -137,7 +138,9 @@ function App() {
             <Feather.X className="h-6 w-6" />
           </button>
         </div>
-        <div className="px-4 pt-2 pb-3 space-y-1">
+
+        {/* Navigation links */}
+        <div className="px-4 pt-2 pb-3 space-y-1 flex-1">
           {[t.home, t.about, t.projects, t.contact].map((item, i) => (
             <a
               key={i}
@@ -152,6 +155,19 @@ function App() {
               {item}
             </a>
           ))}
+        </div>
+
+        {/* Languages at the bottom */}
+        <div className="border-t border-gray-300 px-4 py-4">
+          <p className="text-gray-600 font-medium mb-2">Languages</p>
+          <div className="flex gap-4">
+            <button className="text-gray-800 hover:text-indigo-600">
+              English
+            </button>
+            <button className="text-gray-800 hover:text-indigo-600">
+              Greek
+            </button>
+          </div>
         </div>
       </div>
 
