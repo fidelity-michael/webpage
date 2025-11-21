@@ -18,6 +18,7 @@ import Contact from "./Contact";
 import Card from "./Card";
 import en from "./assets/translations/en.json";
 import gr from "./assets/translations/gr.json";
+import Languages from "./components/Languages";
 
 type Lang = "en" | "gr";
 type TranslationKeys = keyof typeof en;
@@ -158,17 +159,8 @@ function App() {
         </div>
 
         {/* Languages at the bottom */}
-        <div className="border-t border-gray-300 px-4 py-4">
-          <p className="text-gray-600 font-medium mb-2">Languages</p>
-          <div className="flex gap-4">
-            <button className="text-gray-800 hover:text-indigo-600">
-              English
-            </button>
-            <button className="text-gray-800 hover:text-indigo-600">
-              Greek
-            </button>
-          </div>
-        </div>
+        <Languages />
+
       </div>
 
       {/* Hero Section */}
