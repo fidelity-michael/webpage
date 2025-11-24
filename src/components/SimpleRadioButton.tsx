@@ -7,12 +7,25 @@ interface LanguageRadioProps {
   options: LanguageOption[];
   selected: string;
   onChange: (lang: string) => void;
+  setLang: (lang: string) => void;
+}
+
+function convertLang(lang: string): string {
+  if (lang === "English") {
+    return "en";
+  } else if (lang === "Greek") {
+    return "gr";
+  } else {
+    console.error("Wrong input given at lang selection: " + lang);
+    return "error";
+  }
 }
 
 const RadioButton: React.FC<LanguageRadioProps> = ({
   options,
   selected,
   onChange,
+  setLang,
 }) => {
   return (
     <div className="flex flex-col justify-start gap-4 items-start">
@@ -25,13 +38,14 @@ const RadioButton: React.FC<LanguageRadioProps> = ({
               name="language"
               value={opt.language}
               checked={selected === opt.language}
-              onChange={() => onChange(opt.language)}
+              onChange={() => {
+                onChange(opt.language);
+                setLang(convertLang(opt.language));
+              }}
               className=""
             />
             <span className="ml-3 text-2xl">{opt.flag}</span>
-            <span
-              className="w-full py-4 select-none ms-2 text-sm font-medium text-heading"
-            >
+            <span className="w-full py-4 select-none ms-2 text-sm font-medium text-heading">
               {opt.language}
             </span>
           </div>
