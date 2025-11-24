@@ -29,6 +29,7 @@ const RadioButton: React.FC<LanguageRadioProps> = ({
 }) => {
   return (
     <div className="flex flex-col justify-start gap-4 items-start">
+      <div className="border border-t w-full mb-2 opacity-30 rounded-xl"></div>
       <span className="text-2xl ml-1">Languages</span>
       {options.map((opt: LanguageOption) => (
         <label key={opt.language} className="cursor-pointer w-full">

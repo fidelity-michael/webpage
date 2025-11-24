@@ -23,7 +23,6 @@ import Languages from "./components/Languages";
 type Lang = "en" | "gr";
 type TranslationKeys = keyof typeof en;
 type Translations = Record<Lang, Record<TranslationKeys, string>>;
-
 const translations: Translations = { en, gr };
 
 /* TODO: Add button that downloads my cv */
@@ -126,7 +125,7 @@ function App() {
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        className="hidden md:hidden fixed inset-0 bg-gray-200 z-20 pt-16 flex flex-col "
+        className="hidden md:hidden fixed inset-0 bg-gray-100 z-20 pt-16 flex flex-col"
       >
         {/* Close button */}
         <div className="flex justify-end px-5">
@@ -159,7 +158,8 @@ function App() {
         </div>
 
         {/* Languages at the bottom */}
-        <Languages />
+        <Languages setLang={(lang)=>setLang(lang)}/>
+        
 
       </div>
 
