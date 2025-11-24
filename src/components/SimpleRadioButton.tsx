@@ -1,7 +1,3 @@
-import { useState } from "react";
-import type { Icon } from "react-feather";
-import { motion } from "framer-motion";
-
 interface LanguageOption {
   language: string;
   flag: React.ReactNode; // Icon component passed in
@@ -39,16 +35,6 @@ const RadioButton: React.FC<LanguageRadioProps> = ({
               {opt.language}
             </span>
           </div>
-
-          {/* <motion.div
-            animate={{ scale: selected === opt.language ? 1.1 : 1 }}
-            className=""
-          >
-            <div className="flex gap-1 items-center outline outline-gray-500 px-4 py-2">
-              <span className="text-2xl">{opt.flag}</span>
-              <span className="text-base">{opt.language}</span>
-            </div>
-          </motion.div> */}
         </label>
       ))}
     </div>
